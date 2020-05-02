@@ -7,7 +7,8 @@ ARG APP_HOME_DIR=/opt/app
 
 ARG APP_CONFIG_DIR=/opt/config
 RUN mkdir -p ${APP_HOME_DIR} \
-    mkdir -p ${APP_CONFIG_DIR}
+    mkdir -p ${APP_CONFIG_DIR} \
+    echo ${HOST_APP_JAR_LOC}
 
 VOLUME ${APP_CONFIG_DIR}
 
