@@ -6,14 +6,14 @@ ARG HOST_APP_JAR_LOC
 ARG APP_HOME_DIR=/opt/app
 
 ARG APP_CONFIG_DIR=/opt/config
-RUN mkdir -p ${APP_HOME_DIR} \
-    mkdir -p ${APP_CONFIG_DIR} \
+RUN mkdir -p $APP_HOME_DIR \
+    mkdir -p $APP_CONFIG_DIR \
     ls -lrt /opt/app \
-    echo ${HOST_APP_JAR_LOC}
+    echo $HOST_APP_JAR_LOC
 
-VOLUME ${APP_CONFIG_DIR}
+VOLUME $APP_CONFIG_DIR
 
-COPY ${HOST_APP_JAR_LOC} ${APP_HOME_DIR}/
+COPY $HOST_APP_JAR_LOC $APP_HOME_DIR/
 RUN CP ${APP_HOME_DIR}/*.jar ${APP_HOME_DIR}/application.jar \
     chmod 755 ${APP_HOME_DIR}/application.jar
 
