@@ -13,7 +13,7 @@ RUN mkdir -p $APP_HOME_DIR \
 
 VOLUME $APP_CONFIG_DIR
 
-#COPY $HOST_APP_JAR_LOC $APP_HOME_DIR/
+COPY $HOST_APP_JAR_LOC $APP_HOME_DIR/
 #RUN CP ${APP_HOME_DIR}/*.jar ${APP_HOME_DIR}/application.jar \
 #    chmod 755 ${APP_HOME_DIR}/application.jar
 
